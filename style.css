@@ -284,23 +284,9 @@ footer p{
 }
 
 .whatsapp img{
-    width:40px;.socials{
-    margin-top:35px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    max-width:900px;
-    margin-left:auto;
-    margin-right:auto;
+    width:40px;
 }
 
-footer{
-    margin-top:100px;
-    padding:60px 20px;
-    background:#111;
-    color:white;
-    text-align:center;
-}
 
 .socials{
     width:100%;
@@ -314,17 +300,53 @@ footer{
 .socials a{
     flex:1;
     text-align:center;
-    color:#fff !important;
+    color:#fff;
     text-decoration:none;
     font-size:20px;
     font-weight:500;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .socials a:hover{
-    color:#d4af37 !important;
-}
-  
+    color:#d4af37;
 }
 
+
+@media(max-width:900px){
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .room,
+    .facility{
+        flex-direction:column;
+    }
+
+    .room:nth-child(even){
+        flex-direction:column;
+    }
+
+    .room-info,
+    .slider{
+        width:100%;
+    }
+
+    .slider img{
+        height:320px;
+    }
+
+    .facility img{
+        width:100%;
+        height:260px;
+    }
+
+    .socials{
+        flex-direction:column;
+        gap:25px;
+    }
 }
