@@ -28,7 +28,7 @@ const galleries = {
     ]
 };
 
-const current = {
+const currentIndex = {
     standard: 0,
     twin: 0,
     twindeluxe: 0,
@@ -37,24 +37,24 @@ const current = {
 
 function nextImage(room){
 
-    current[room]++;
+    currentIndex[room]++;
 
-    if(current[room] >= galleries[room].length){
-        current[room] = 0;
+    if(currentIndex[room] >= galleries[room].length){
+        currentIndex[room] = 0;
     }
 
     document.getElementById(room).src =
-        galleries[room][current[room]];
+        galleries[room][currentIndex[room]];
 }
 
 function prevImage(room){
 
-    current[room]--;
+    currentIndex[room]--;
 
-    if(current[room] < 0){
-        current[room] = galleries[room].length - 1;
+    if(currentIndex[room] < 0){
+        currentIndex[room] = galleries[room].length - 1;
     }
 
     document.getElementById(room).src =
-        galleries[room][current[room]];
+        galleries[room][currentIndex[room]];
 }
