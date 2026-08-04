@@ -43,8 +43,10 @@ function nextImage(room){
         currentIndex[room] = 0;
     }
 
-    document.getElementById(room).src =
-        galleries[room][currentIndex[room]];
+    changeImage(
+    room,
+    galleries[room][currentIndex[room]]
+    );
 }
 
 function prevImage(room){
@@ -55,6 +57,20 @@ function prevImage(room){
         currentIndex[room] = galleries[room].length - 1;
     }
 
-    document.getElementById(room).src =
-        galleries[room][currentIndex[room]];
+    changeImage(
+    room,
+    galleries[room][currentIndex[room]]
+    );
+}
+function changeImage(room, src){
+
+    let img = document.getElementById(room);
+
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+        img.src = src;
+        img.style.opacity = "1";
+    }, 300);
+
 }
