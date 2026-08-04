@@ -294,17 +294,35 @@ footer p{
     margin-right:auto;
 }
 
-.socials a{
+footer{
+    margin-top:100px;
+    padding:60px 20px;
+    background:#111;
     color:white;
+    text-align:center;
+}
+
+.socials{
+    width:100%;
+    max-width:1000px;
+    margin:40px auto 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.socials a{
+    flex:1;
+    text-align:center;
+    color:#fff !important;
     text-decoration:none;
-    font-size:18px;
-    transition:.3s;
+    font-size:20px;
+    font-weight:500;
+    transition:0.3s;
 }
 
 .socials a:hover{
-    color:#d4af37;
-}
-    height:40px;
+    color:#d4af37 !important;
 }
   
 }
