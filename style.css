@@ -284,26 +284,29 @@ footer p{
 }
 
 .whatsapp img{
-    width:40px;
-    height:40px;
-}
-    .socials{
-    margin-top:25px;
+    width:40px;.socials{
+    margin-top:35px;
     display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .socials a{
-    color:#d4af37;
+    color:white;
     text-decoration:none;
     font-size:18px;
     transition:.3s;
 }
 
 .socials a:hover{
-    color:white;
+    color:#d4af37;
+}
+    height:40px;
+}
+  
 }
 
 }
