@@ -169,7 +169,7 @@ body{
 .slider img{
     width:100%;
     height:600px;
-    object-fit:contain;
+    object-fit:cover;
     display:block;
     background:#f5f5f5;
     transition: opacity .3s ease;
@@ -313,7 +313,7 @@ footer p{
 
     .slider img{
     height:480px;
-    object-fit:contain;
+    object-fit:cover;
 }
 
     .facility img{
