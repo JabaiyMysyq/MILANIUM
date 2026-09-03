@@ -25,6 +25,24 @@ const galleries = {
         "l2.jpg",
         "l3.jpg",
         "l4.jpg"
+    ],
+
+    sauna: [
+        "sauna1.jpg",
+        "sauna2.jpg",
+        "sauna3.jpg"
+    ],
+
+    gym: [
+        "gym1.jpg",
+        "gym2.jpg",
+        "gym3.jpg"
+    ],
+
+    restoran: [
+        "restoran1.jpg",
+        "restoran2.jpg",
+        "restoran3.jpg"
     ]
 };
 
@@ -32,7 +50,11 @@ const currentIndex = {
     standard: 0,
     twin: 0,
     twindeluxe: 0,
-    luxe: 0
+    luxe: 0,
+
+    sauna: 0,
+    gym: 0,
+    restoran: 0
 };
 
 function nextImage(room){
