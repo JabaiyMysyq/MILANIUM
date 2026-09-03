@@ -38,13 +38,17 @@ const galleries = {
     gym: [
         "gym1.jpg",
         "gym2.jpg",
-        "gym3.jpg"
+        "gym3.jpg",
+        "gym4.jpg",
+        "gym5.jpg"
     ],
 
     restoran: [
         "restoran1.jpg",
         "restoran2.jpg",
-        "restoran3.jpg"
+        "restoran3.jpg",
+        "restoran4.jpg",
+        "restoran5.jpg"
     ]
 };
 
