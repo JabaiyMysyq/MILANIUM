@@ -30,7 +30,9 @@ const galleries = {
     sauna: [
         "sauna1.jpg",
         "sauna2.jpg",
-        "sauna3.jpg"
+        "sauna3.jpg",
+        "sauna4.jpg",
+        "sauna5.jpg"
     ],
 
     gym: [
