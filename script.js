@@ -34,7 +34,8 @@ const galleries = {
         "restoran1.jpg",
         "019.jpg",
         "027.jpg",
-        "restoran2.jpg",
+        "024.jpg",
+        "restoran2.jpg"
         "restoran3.jpg"
     ],
 
