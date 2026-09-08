@@ -7,10 +7,11 @@ const galleries = {
     ],
 
     twin: [
-        "tw1.jpg",
-        "tw2.jpg",
-        "tw3.jpg",
-        "tw4.jpg"
+        "043.png",
+        "044.png",
+        "045.png",
+        "046.png",
+        "048.png"
     ],
 
     twindeluxe: [
