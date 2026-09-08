@@ -8,6 +8,57 @@
     <title>MILANIUM HOTEL</title>
 
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Базовая стилизация слайдеров */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider img {
+            width: 100%;
+            display: none; /* Все картинки скрыты по умолчанию */
+            object-fit: cover;
+        }
+
+        .slider img.active {
+            display: block; /* Отображается только активная картинка */
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .slider .prev,
+        .slider .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 18px;
+            border-radius: 4px;
+            user-select: none;
+        }
+
+        .slider .prev { left: 10px; }
+        .slider .next { right: 10px; }
+
+        .slider .prev:hover,
+        .slider .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 
 <body>
@@ -81,13 +132,13 @@
 
         <div class="slider">
 
-            <button class="prev" onclick="prevImage('standard')">
+            <button class="prev" onclick="moveSlide(this, -1)">
                 &#10094;
             </button>
 
-            <img src="stk1.jpg" id="standard" alt="Standard Room">
+            <img src="stk1.jpg" class="active" alt="Standard Room">
 
-            <button class="next" onclick="nextImage('standard')">
+            <button class="next" onclick="moveSlide(this, 1)">
                 &#10095;
             </button>
 
@@ -112,13 +163,13 @@
 
         <div class="slider">
 
-            <button class="prev" onclick="prevImage('twin')">
+            <button class="prev" onclick="moveSlide(this, -1)">
                 &#10094;
             </button>
 
-            <img src="tw1.jpg" id="twin" alt="Twin Room">
+            <img src="tw1.jpg" class="active" alt="Twin Room">
 
-            <button class="next" onclick="nextImage('twin')">
+            <button class="next" onclick="moveSlide(this, 1)">
                 &#10095;
             </button>
 
@@ -143,13 +194,13 @@
 
         <div class="slider">
 
-            <button class="prev" onclick="prevImage('twindeluxe')">
+            <button class="prev" onclick="moveSlide(this, -1)">
                 &#10094;
             </button>
 
-            <img src="dl1.jpg" id="twindeluxe" alt="Twin Deluxe">
+            <img src="dl1.jpg" class="active" alt="Twin Deluxe">
 
-            <button class="next" onclick="nextImage('twindeluxe')">
+            <button class="next" onclick="moveSlide(this, 1)">
                 &#10095;
             </button>
 
@@ -174,13 +225,13 @@
 
         <div class="slider">
 
-            <button class="prev" onclick="prevImage('luxe')">
+            <button class="prev" onclick="moveSlide(this, -1)">
                 &#10094;
             </button>
 
-            <img src="l1.jpg" id="luxe" alt="Luxe Room">
+            <img src="l1.jpg" class="active" alt="Luxe Room">
 
-            <button class="next" onclick="nextImage('luxe')">
+            <button class="next" onclick="moveSlide(this, 1)">
                 &#10095;
             </button>
 
@@ -202,15 +253,16 @@
 
         <div class="slider">
 
-            <button class="prev" onclick="prevImage('restoran')">
+            <button class="prev" onclick="moveSlide(this, -1)">
                 &#10094;
             </button>
 
-            <img src="restoran1.jpg" id="restoran" alt="Ресторан">
-            <img src="019.jpg" alt="Ресторан - фото 2">
-            <img src="027.jpg" alt="Ресторан - фото 3">
+            <!-- Все 3 фотографии ресторана -->
+            <img src="restoran1.jpg" class="active" alt="Ресторан - Фото 1">
+            <img src="019.jpg" alt="Ресторан - Фото 2">
+            <img src="027.jpg" alt="Ресторан - Фото 3">
 
-            <button class="next" onclick="nextImage('restoran')">
+            <button class="next" onclick="moveSlide(this, 1)">
                 &#10095;
             </button>
 
@@ -236,13 +288,13 @@
 
         <div class="slider">
 
-            <button class="prev" onclick="prevImage('gym')">
+            <button class="prev" onclick="moveSlide(this, -1)">
                 &#10094;
             </button>
 
-            <img src="gym1.jpg" id="gym" alt="Фитнес-зал">
+            <img src="gym1.jpg" class="active" alt="Фитнес-зал">
 
-            <button class="next" onclick="nextImage('gym')">
+            <button class="next" onclick="moveSlide(this, 1)">
                 &#10095;
             </button>
 
@@ -268,13 +320,13 @@
 
         <div class="slider">
 
-            <button class="prev" onclick="prevImage('spa')">
+            <button class="prev" onclick="moveSlide(this, -1)">
                 &#10094;
             </button>
 
-            <img src="sauna1.jpg" id="spa" alt="СПА">
+            <img src="sauna1.jpg" class="active" alt="СПА">
 
-            <button class="next" onclick="nextImage('spa')">
+            <button class="next" onclick="moveSlide(this, 1)">
                 &#10095;
             </button>
 
@@ -319,7 +371,34 @@
 
 </footer>
 
-<script src="script.js"></script>
+<!-- Скрипт переключения слайдов -->
+<script>
+    function moveSlide(buttonElement, direction) {
+        // Находим родительский блок .slider
+        const slider = buttonElement.closest('.slider');
+        if (!slider) return;
+
+        // Находим все картинки внутри данного слайдера
+        const images = slider.querySelectorAll('img');
+        if (images.length <= 1) return; // Если картинка всего одна, переключать нечего
+
+        let currentIndex = -1;
+
+        // Ищем индекс текущей активной картинки
+        images.forEach((img, index) => {
+            if (img.classList.contains('active')) {
+                currentIndex = index;
+                img.classList.remove('active');
+            }
+        });
+
+        // Рассчитываем индекс следующей картинки по кругу
+        let newIndex = (currentIndex + direction + images.length) % images.length;
+
+        // Показываем новую картинку
+        images[newIndex].classList.add('active');
+    }
+</script>
 
 </body>
 
