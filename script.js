@@ -27,12 +27,12 @@ const galleries = {
         "l4.jpg"
     ],
 
-    sauna: [
-        "sauna1.jpg",
-        "sauna2.jpg",
-        "sauna3.jpg",
-        "sauna4.jpg",
-        "sauna5.jpg"
+    restoran: [
+        "restoran1.jpg",
+        "019.jpg",
+        "027.jpg",
+        "restoran2.jpg",
+        "restoran3.jpg"
     ],
 
     gym: [
@@ -43,12 +43,12 @@ const galleries = {
         "gym5.jpg"
     ],
 
-    restoran: [
-        "restoran1.jpg",
-        "restoran2.jpg",
-        "restoran3.jpg",
-        "restoran4.jpg",
-        "restoran5.jpg"
+    sauna: [
+        "sauna1.jpg",
+        "sauna2.jpg",
+        "sauna3.jpg",
+        "sauna4.jpg",
+        "sauna5.jpg"
     ]
 };
 
@@ -57,42 +57,38 @@ const currentIndex = {
     twin: 0,
     twindeluxe: 0,
     luxe: 0,
-
-    sauna: 0,
+    restoran: 0,
     gym: 0,
-    restoran: 0
+    sauna: 0
 };
 
-function nextImage(room){
+function nextImage(room) {
+    if (!galleries[room]) return;
 
     currentIndex[room]++;
 
-    if(currentIndex[room] >= galleries[room].length){
+    if (currentIndex[room] >= galleries[room].length) {
         currentIndex[room] = 0;
     }
 
-    changeImage(
-    room,
-    galleries[room][currentIndex[room]]
-    );
+    changeImage(room, galleries[room][currentIndex[room]]);
 }
 
-function prevImage(room){
+function prevImage(room) {
+    if (!galleries[room]) return;
 
     currentIndex[room]--;
 
-    if(currentIndex[room] < 0){
+    if (currentIndex[room] < 0) {
         currentIndex[room] = galleries[room].length - 1;
     }
 
-    changeImage(
-    room,
-    galleries[room][currentIndex[room]]
-    );
+    changeImage(room, galleries[room][currentIndex[room]]);
 }
-function changeImage(room, src){
 
+function changeImage(room, src) {
     let img = document.getElementById(room);
+    if (!img) return;
 
     img.style.opacity = "0";
 
@@ -100,5 +96,4 @@ function changeImage(room, src){
         img.src = src;
         img.style.opacity = "1";
     }, 300);
-
 }
