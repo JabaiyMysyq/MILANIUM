@@ -1,7 +1,7 @@
 const galleries = {
     standard: [
         "stk1.jpg",
-        "stk2.jpg",
+        "059.jpg",
         "stk3.jpg",
         "stk4.jpg"
     ],
