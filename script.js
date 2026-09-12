@@ -32,9 +32,9 @@ const galleries = {
 
     restoran: [
         "restoran1.jpg",
-        "019.jpg",
-        "027.jpg",
-        "024.jpg",
+        "019.png",
+        "027.png",
+        "024.png",
         "restoran2.jpg",
         "restoran3.jpg"
     ],
