@@ -22,12 +22,12 @@ const galleries = {
     ],
 
     luxe: [
-        "035.png",
-        "037.png",
         "039.png",
         "040.png",
         "041.png",
         "042.png"
+        "035.png",
+        "037.png",
     ],
 
     restoran: [
