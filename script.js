@@ -10,30 +10,28 @@ const galleries = {
         "043.png",
         "044.png",
         "045.png",
-        "046.png",
-        "048.png"
+        "046.png"
     ],
 
     twindeluxe: [
         "dl1.jpg",
+        "dl4.jpg",
         "dl2.jpg",
-        "dl3.jpg",
-        "dl4.jpg"
+        "dl3.jpg"
     ],
 
     luxe: [
-        "039.png",
+        "037.png",
         "040.png",
         "041.png",
         "042.png",
-        "035.png",
-        "037.png"
+        "039.png",
+        "035.png"
     ],
 
     restoran: [
         "restoran1.jpg",
         "019.png",
-        "027.png",
         "024.png",
         "restoran2.jpg",
         "restoran3.jpg"
