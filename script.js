@@ -21,10 +21,12 @@ const galleries = {
     ],
 
     luxe: [
-        "037.png",
         "040.png",
         "041.png",
         "042.png",
+        "l1.jpg",
+        "l2.jpg",
+        "037.png",
         "039.png",
         "035.png"
     ],
