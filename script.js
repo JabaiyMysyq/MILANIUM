@@ -27,7 +27,7 @@ const galleries = {
         "041.png",
         "042.png",
         "035.png",
-        "037.png",
+        "037.png"
     ],
 
     restoran: [
