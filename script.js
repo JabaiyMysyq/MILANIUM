@@ -1,4 +1,15 @@
 const galleries = {
+    overview: [
+        "2.png",
+        "12.jpg",
+        "030.png",
+        "031.png",
+        "033.png",
+        "029.png",
+        "064.png",
+        "065.jpg"
+    ],
+
     standard: [
         "stk1.jpg",
         "059.png",
@@ -57,6 +68,7 @@ const galleries = {
 };
 
 const currentIndex = {
+    overview: 0,
     standard: 0,
     twin: 0,
     twindeluxe: 0,
