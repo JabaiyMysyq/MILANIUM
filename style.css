@@ -95,6 +95,13 @@ body{
     font-size:18px;
 }
 
+/* ================= ОБЗОР ОТЕЛЯ И ИНТЕРЬЕРА ================= */
+
+.hotel-overview {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
 /* ================= УДОБСТВА ================= */
 
 .facility{
@@ -255,7 +262,6 @@ footer p{
     color:#d4af37;
 }
 
-
 /* ================= WHATSAPP КНОПКА ================= */
 
 .whatsapp{
@@ -287,7 +293,6 @@ footer p{
     width:40px;
 }
 
-
 /* ================= МОБИЛЬНАЯ ВЕРСИЯ ================= */
 
 @media(max-width:900px){
@@ -315,10 +320,10 @@ footer p{
     }
 
     .slider img{
-    height:480px;
-    object-fit:cover;
-    object-position:top;
-}
+        height:480px;
+        object-fit:cover;
+        object-position:top;
+    }
 
     .facility img{
         width:100%;
